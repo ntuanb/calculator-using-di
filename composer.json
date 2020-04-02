@@ -1,0 +1,33 @@
+{
+    "name": "nguyentuanbui/calculator-using-di",
+    "authors": [
+        {
+            "name": "Tuan Bui",
+            "email": "ntuanb@gmail.com"
+        }
+    ],
+    "require": {
+        "php-di/php-di": "^6.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "vimeo/psalm": "^3.10",
+        "phpunit/phpunit": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Calculator\\": "src/"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "lint": "vendor/bin/php-cs-fixer fix src --rules=@PSR2",
+        "unit": "vendor/bin/phpunit tests/",
+        "ci": "composer lint && composer psalm && composer unit",
+        "add": "php index.php -m add -a 1 -b 2",
+        "subtract": "php index.php -m subtract -a 1 -b 2",
+        "multiply": "php index.php -m multiply -a 1 -b 2",
+        "divide": "php index.php -m divide -a 1 -b 2",
+        "run": "composer add && composer subtract && composer multiply && composer divide"
+    }
+}
